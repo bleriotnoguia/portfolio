@@ -67,10 +67,10 @@ export const experiencesData = [
     date: "Aug. 2021 - Nov. 2022",
   },
   {
-    title: "Full-Stack Developer",
+    title: "Fontend Developer",
     company: "Wat & Co",
     description:
-      "I worked as a lead front-end developer. I was in charge of the front-end architecture and the development of the web application.",
+      "I worked as a front-end developer. I was in charge of the front-end architecture and the development of the website.",
     icon: React.createElement(FaReact),
     date: "Feb. 2023 - Oct. 2023",
   },
