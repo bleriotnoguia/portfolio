@@ -123,7 +123,7 @@ export const skillsData = [
   "GraphQL",
   "Apollo",
   "Express",
-  "PostgreSQL",
+  "MySQL",
   "React Query",
   "Laravel",
   "Framer Motion",
