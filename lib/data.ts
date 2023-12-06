@@ -4,32 +4,40 @@ import { FaReact } from "react-icons/fa";
 import welediImg from "@/public/weledi.png";
 import greatpayImg from "@/public/greatpay.png";
 import digintuCodeImg from "@/public/digintu-code.png";
+import clinicImg from "@/public/clinique-dentaire-wado.png";
+import gaAcademieImg from "@/public/ga-academie.png";
+import innovImg from "@/public/innov-and-co.png";
 import onebillImg from "@/public/onebill.png";
+import calcoImg from "@/public/calco.png";
+import cointrackerImg from "@/public/cointracker.png";
+import adaaLearningImg from "@/public/adaalearning.png";
+import porfoliov1Img from "@/public/portfolio1.png";
+import portfoliov2Img from "@/public/portfolio2.png";
 
 export const links = [
   {
     name: "Home",
-    hash: "#home",
+    hash: "/#home",
   },
   {
     name: "About",
-    hash: "#about",
+    hash: "/#about",
   },
   {
     name: "Projects",
-    hash: "#projects",
+    hash: "/#projects",
   },
   {
     name: "Skills",
-    hash: "#skills",
+    hash: "/#skills",
   },
   {
     name: "Experience",
-    hash: "#experience",
+    hash: "/#experience",
   },
   {
     name: "Contact",
-    hash: "#contact",
+    hash: "/#contact",
   },
 ] as const;
 
@@ -86,14 +94,6 @@ export const projectsData = [
     link: "https://weledi.dev",
   },
   {
-    title: "GreatPay",
-    description:
-      "It is a payment application intended for financial institutions wishing to issue bank cards. I worked on this project as a lead front-end developer.",
-    tags: ["React", "TypeScript", "GitLab", "Chakra UI", "React Query"],
-    imageUrl: greatpayImg,
-    link: "https://greatpay.vercel.app/",
-  },
-  {
     title: "Digintu Code",
     description:
       "This platform aims to allow freelancers and companies to easily create web applications without having to write a line of code.",
@@ -108,6 +108,78 @@ export const projectsData = [
     tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
     imageUrl: onebillImg,
     link: "https://www.icabedo.ch/onebill",
+  },
+  {
+    title: "Dental Clinic",
+    description:
+      "This application helps companies automatically manage the sending, receiving and payment of their invoices.",
+    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
+    imageUrl: clinicImg,
+    link: "https://cliniquedentairewado.com",
+  },
+  {
+    title: "GreatPay",
+    description:
+      "It is a payment application intended for financial institutions wishing to issue bank cards. I worked on this project as a lead front-end developer.",
+    tags: ["React", "TypeScript", "GitLab", "Chakra UI", "React Query"],
+    imageUrl: greatpayImg,
+    link: "https://greatpay.vercel.app/",
+  },
+  {
+    title: "Innov and Co",
+    description:
+      "This application helps companies automatically manage the sending, receiving and payment of their invoices.",
+    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
+    imageUrl: innovImg,
+    link: "https://www.innovandco.net",
+  },
+  {
+    title: "Ga Academie",
+    description:
+      "This application helps companies automatically manage the sending, receiving and payment of their invoices.",
+    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
+    imageUrl: gaAcademieImg,
+    link: "https://gaacademie.com",
+  },
+  {
+    title: "Cointracker",
+    description:
+      "This application helps companies automatically manage the sending, receiving and payment of their invoices.",
+    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
+    imageUrl: cointrackerImg,
+    link: "https://cointracker.bleriotnoguia.com/",
+  },
+  {
+    title: "Calculator",
+    description:
+      "This application helps companies automatically manage the sending, receiving and payment of their invoices.",
+    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
+    imageUrl: calcoImg,
+    link: "https://calculator.bleriotnoguia.com/",
+  },
+  {
+    title: "Adaa Learning",
+    description:
+      "This application helps companies automatically manage the sending, receiving and payment of their invoices.",
+    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
+    imageUrl: adaaLearningImg,
+    link: "https://adaalearning.com/",
+  },
+  {
+    title: "Current portfolio",
+    description:
+      "This application helps companies automatically manage the sending, receiving and payment of their invoices.",
+    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
+    imageUrl: portfoliov2Img,
+    link: "",
+  },
+  {
+    title: "Portfolio v1",
+    description:
+      "This application helps companies automatically manage the sending, receiving and payment of their invoices.",
+    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
+    imageUrl: porfoliov1Img,
+    link: "https://v1.bleriotnoguia.com/",
   },
 ] as const;
 
