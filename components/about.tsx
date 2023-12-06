@@ -27,8 +27,8 @@ export default function About() {
         feeling of finally figuring out a solution to a problem. My core stack
         is{" "}
         <span className="font-medium">React, Next.js, Node.js, and MySQL</span>.
-        I am also familiar with Laravel and TypeScript. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
+        I am also familiar with Laravel and No-Code ecosystem. I am always
+        looking to learn new technologies. I am currently looking for a{" "}
         <span className="font-medium">full-time position</span> as a software
         developer.
       </p>

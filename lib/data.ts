@@ -35,20 +35,20 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Full-Stack Developer",
-    company: "ALC-Digital",
+    title: "Fontend Developer",
+    company: "Wat & Co",
     description:
-      "As a full-stack developer, I worked on web application for managing deliveries and customer orders.",
-    icon: React.createElement(CgWorkAlt),
-    date: "March 2019 - Oct. 2019",
+      "I worked as a front-end developer. I was in charge of the front-end architecture and the development of the website.",
+    icon: React.createElement(FaReact),
+    date: "Feb. 2023 - Oct. 2023",
   },
   {
     title: "Full-Stack Developer",
-    company: "ADAA SAS",
+    company: "Digintu Tech",
     description:
-      "I worked as a Full-Stack Developer. With my team we build an online learning platform.",
-    icon: React.createElement(CgWorkAlt),
-    date: "Dec. 2019 - Oct. 2020",
+      "As a full-stack developer, I participate on building a no-code platform.",
+    icon: React.createElement(FaReact),
+    date: "Aug. 2021 - Nov. 2022",
   },
   {
     title: "Full-Stack Developer",
@@ -60,19 +60,19 @@ export const experiencesData = [
   },
   {
     title: "Full-Stack Developer",
-    company: "Digintu Tech",
+    company: "ADAA SAS",
     description:
-      "As a full-stack developer, I participate on building a no-code platform.",
-    icon: React.createElement(FaReact),
-    date: "Aug. 2021 - Nov. 2022",
+      "I worked as a Full-Stack Developer. With my team we build an online learning platform.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Dec. 2019 - Oct. 2020",
   },
   {
-    title: "Fontend Developer",
-    company: "Wat & Co",
+    title: "Full-Stack Developer",
+    company: "ALC-Digital",
     description:
-      "I worked as a front-end developer. I was in charge of the front-end architecture and the development of the website.",
-    icon: React.createElement(FaReact),
-    date: "Feb. 2023 - Oct. 2023",
+      "As a full-stack developer, I worked on web application for managing deliveries and customer orders.",
+    icon: React.createElement(CgWorkAlt),
+    date: "March 2019 - Oct. 2019",
   },
 ] as const;
 
@@ -83,6 +83,7 @@ export const projectsData = [
       "I worked as a full-stack developer on this website project for 2 months. Visitors can get more information about weledi company.",
     tags: ["React", "Next.js", "Sanity", "Bootstrap", "TypeScript"],
     imageUrl: welediImg,
+    link: "https://weledi.dev",
   },
   {
     title: "GreatPay",
@@ -90,6 +91,7 @@ export const projectsData = [
       "It is a payment application intended for financial institutions wishing to issue bank cards. I worked on this project as a lead front-end developer.",
     tags: ["React", "TypeScript", "GitLab", "Chakra UI", "React Query"],
     imageUrl: greatpayImg,
+    link: "https://greatpay.vercel.app/",
   },
   {
     title: "Digintu Code",
@@ -97,6 +99,7 @@ export const projectsData = [
       "This platform aims to allow freelancers and companies to easily create web applications without having to write a line of code.",
     tags: ["React", "Typescript", "Ant Design", "GraphQL", "Apollo", "Laravel"],
     imageUrl: digintuCodeImg,
+    link: "https://digintu.codes",
   },
   {
     title: "OneBill",
@@ -104,6 +107,7 @@ export const projectsData = [
       "This application helps companies automatically manage the sending, receiving and payment of their invoices.",
     tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
     imageUrl: onebillImg,
+    link: "https://www.icabedo.ch/onebill",
   },
 ] as const;
 
@@ -127,4 +131,5 @@ export const skillsData = [
   "React Query",
   "Laravel",
   "Framer Motion",
+  "Cypress",
 ] as const;
