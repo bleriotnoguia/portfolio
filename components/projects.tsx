@@ -13,7 +13,7 @@ export default function Projects() {
     <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
       <SectionHeading>My projects</SectionHeading>
       <div>
-        {projectsData.slice(0, 4).map((project, index) => (
+        {projectsData.slice(0, 3).map((project, index) => (
           <React.Fragment key={index}>
             <Project applyEvenTransformations={true} {...project} />
           </React.Fragment>
