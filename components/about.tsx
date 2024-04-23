@@ -28,9 +28,7 @@ export default function About() {
         is{" "}
         <span className="font-medium">React, Next.js, Node.js, and MySQL</span>.
         I am also familiar with Laravel and No-Code ecosystem. I am always
-        looking to learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a software
-        developer.
+        looking to learn new technologies.
       </p>
 
       <p>
