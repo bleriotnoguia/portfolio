@@ -43,6 +43,14 @@ export const links = [
 
 export const experiencesData = [
   {
+    title: "Full-Stack Developer",
+    company: "COMEUP (Freelance)",
+    description:
+      "On the comeup platform I offer my services to individuals and businesses as a fullstack developer",
+    icon: React.createElement(FaReact),
+    date: "Nov. 2023 - Present",
+  },
+  {
     title: "Fontend Developer",
     company: "Wat & Co",
     description:
