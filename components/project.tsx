@@ -48,14 +48,14 @@ export default function Project({
             applyEvenTransformations && "sm:group-even:ml-[18rem]"
           }`}
         >
-          <h3 className="text-2xl font-semibold flex items-center">
-            {title}{" "}
-            {link && (
-              <a href={link} className="underline" target="_blank">
+          <a href={link} className="underline" target="_blank">
+            <h3 className="text-2xl font-semibold flex items-center">
+              {title}{" "}
+              {link && (
                 <BsArrowUpRightCircle className="ml-2 h-50 focus:scale-110 hover:scale-110" />
-              </a>
-            )}
-          </h3>
+              )}
+            </h3>
+          </a>
           <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
             {description}
           </p>

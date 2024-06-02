@@ -10,6 +10,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { experiencesData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
+import { BsArrowUpRightCircle } from "react-icons/bs";
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience", 0.5);
@@ -45,7 +46,14 @@ export default function Experience() {
               }}
             >
               <h3 className="font-semibold capitalize">{item.title}</h3>
-              <p className="font-normal !mt-0">{item.company}</p>
+              <a href={item.link} className="underline" target="_blank">
+                <p className="font-normal !mt-0 flex items-center">
+                  {item.company}{" "}
+                  {item.link && (
+                    <BsArrowUpRightCircle className="ml-2 h-50 focus:scale-110 hover:scale-110" />
+                  )}
+                </p>
+              </a>
               <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
                 {item.description}
               </p>

@@ -1,7 +1,7 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
-import welediImg from "@/public/weledi.png";
+import biquizImg from "@/public/biquiz.png";
 import greatpayImg from "@/public/greatpay.png";
 import digintuCodeImg from "@/public/digintu-code.png";
 import clinicImg from "@/public/clinique-dentaire-wado.png";
@@ -49,6 +49,7 @@ export const experiencesData = [
       "On the comeup platform I offer my services to individuals and businesses as a fullstack developer",
     icon: React.createElement(FaReact),
     date: "Nov. 2023 - Present",
+    link: "https://comeup.com/@dev-pro",
   },
   {
     title: "Fontend Developer",
@@ -57,6 +58,7 @@ export const experiencesData = [
       "I worked as a front-end developer. I was in charge of front-end component development and project management.",
     icon: React.createElement(FaReact),
     date: "Feb. 2023 - Oct. 2023",
+    link: "https://watconsultants.com",
   },
   {
     title: "Full-Stack Developer",
@@ -65,6 +67,7 @@ export const experiencesData = [
       "As a full-stack developer, I participate on building a no-code platform. We used React.js, Laravel, graphql...",
     icon: React.createElement(FaReact),
     date: "Aug. 2021 - Nov. 2022",
+    link: "https://digintu.ch",
   },
   {
     title: "Full-Stack Developer",
@@ -73,6 +76,7 @@ export const experiencesData = [
       "On the comeup freelance platform I met the needs of many clients. (website creation and bug fixing)",
     icon: React.createElement(CgWorkAlt),
     date: "Nov. 2020 - Jul. 2021",
+    link: "https://comeup.com/@dev-pro",
   },
   {
     title: "Full-Stack Developer",
@@ -81,6 +85,7 @@ export const experiencesData = [
       "I worked as a Full-Stack Developer. With my team we build an online learning platform with React.js and Laravel.",
     icon: React.createElement(CgWorkAlt),
     date: "Dec. 2019 - Oct. 2020",
+    link: "https://adaalearning.com",
   },
   {
     title: "Full-Stack Developer",
@@ -89,17 +94,18 @@ export const experiencesData = [
       "As a full-stack developer, I worked on web application for managing deliveries and customer orders.",
     icon: React.createElement(CgWorkAlt),
     date: "March 2019 - Oct. 2019",
+    link: "https://alc-digital.com",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "Weledi",
+    title: "Biquiz",
     description:
-      "I worked as a font-end developer on this website project for 2 months. the website allow visitors to get more information about weledi company.",
-    tags: ["React", "Next.js", "Sanity", "Bootstrap", "TypeScript"],
-    imageUrl: welediImg,
-    link: "https://weledi.dev",
+      "Biquiz is a quiz app that allows you to create and play quizzes. It was built with React, Next.js, Ionic, Supabase and TypeScript.",
+    tags: ["React", "Next.js", "Ionic", "Supabase", "TypeScript"],
+    imageUrl: biquizImg,
+    link: "https://biquiz.vercel.app",
   },
   {
     title: "Digintu Code",
