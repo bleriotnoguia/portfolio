@@ -4,7 +4,8 @@ import { FaReact } from "react-icons/fa";
 import biquizImg from "@/public/biquiz.png";
 import greatpayImg from "@/public/greatpay.png";
 import digintuCodeImg from "@/public/digintu-code.png";
-import clinicImg from "@/public/clinique-dentaire-wado.png";
+import glocosarlImg from "@/public/glocosarl.png";
+import legardImg from "@/public/legard-store.png";
 import gaAcademieImg from "@/public/ga-academie.png";
 import innovImg from "@/public/innov-and-co.png";
 import onebillImg from "@/public/onebill.png";
@@ -100,14 +101,6 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "Biquiz",
-    description:
-      "Biquiz is a quiz app that allows you to create and play quizzes. It was built with React, Next.js, Ionic, Supabase and TypeScript.",
-    tags: ["React", "Next.js", "Ionic", "Supabase", "TypeScript"],
-    imageUrl: biquizImg,
-    link: "https://biquiz.vercel.app",
-  },
-  {
     title: "Digintu Code",
     description:
       "As a fullstack developer, I fully developed the front-end part and I also took care of adding new features to the backend.",
@@ -124,6 +117,14 @@ export const projectsData = [
     link: "https://digintu.codes",
   },
   {
+    title: "Gloco Sarl",
+    description:
+      "The website was built with WordPress. It allow visitors to get more information about the company and its services.",
+    tags: ["WordPress", "CSS"],
+    imageUrl: glocosarlImg,
+    link: "https://glocosarl.com",
+  },
+  {
     title: "OneBill",
     description:
       "My participation in this project mainly consisted of carrying out end-to-end tests with cypress and fixing bugs in the frontend and backend.",
@@ -132,12 +133,12 @@ export const projectsData = [
     link: "https://www.icabedo.ch/onebill",
   },
   {
-    title: "Dental Clinic",
+    title: "Legard Store",
     description:
-      "The website was built with WordPress. It allow visitors to get more information about the dental clinic.",
+      "The website was built with WordPress. It allow visitors to get more information about the company and its products.",
     tags: ["WordPress", "CSS"],
-    imageUrl: clinicImg,
-    link: "https://cliniquedentairewado.com",
+    imageUrl: legardImg,
+    link: "https://legard.store",
   },
   {
     title: "GreatPay",
@@ -154,6 +155,14 @@ export const projectsData = [
     tags: ["HTML", "CSS", "JavaScript", "jekyll"],
     imageUrl: innovImg,
     link: "https://www.innovandco.net",
+  },
+  {
+    title: "Biquiz",
+    description:
+      "Biquiz is a quiz app that allows you to create and play quizzes. It was built with React, Next.js, Ionic, Supabase and TypeScript.",
+    tags: ["React", "Next.js", "Ionic", "Supabase", "TypeScript"],
+    imageUrl: biquizImg,
+    link: "https://biquiz.vercel.app",
   },
   {
     title: "Ga Academie",
