@@ -44,6 +44,15 @@ export const links = [
 
 export const experiencesData = [
   {
+    title: "Fontend React.js Developer",
+    company: "Ejara",
+    description:
+      "I am involved in developing the frontend of the admin dashboard for the Ejara application. Converting Figma designs into functional code using React.js.",
+    icon: React.createElement(FaReact),
+    date: "Sept. 2024 - Present",
+    link: "https://ejara.io",
+  },
+  {
     title: "Full-Stack Developer",
     company: "COMEUP (Freelance)",
     description:
@@ -53,7 +62,7 @@ export const experiencesData = [
     link: "https://comeup.com/@dev-pro",
   },
   {
-    title: "Fontend Developer",
+    title: "Fontend React.js Developer",
     company: "Wat & Co",
     description:
       "I worked as a front-end developer. I was in charge of front-end component development and project management.",
