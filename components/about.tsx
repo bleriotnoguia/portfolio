@@ -26,8 +26,10 @@ export default function About() {
         problem-solving aspect. I <span className="underline">love</span> the
         feeling of finally figuring out a solution to a problem. My core stack
         is{" "}
-        <span className="font-medium">React, Next.js, Node.js, and MySQL</span>.
-        I am also familiar with Laravel and No-Code ecosystem. I am always
+        <span className="font-medium">
+          React (Next.js), Node.js (AdonisJS), and MySQL
+        </span>
+        . I am also familiar with Laravel and No-Code ecosystem. I am always
         looking to learn new technologies.
       </p>
 
