@@ -56,9 +56,9 @@ export const experiencesData = [
     title: "Full-Stack Developer",
     company: "COMEUP (Freelance)",
     description:
-      "On the comeup platform I offer my services to individuals and businesses as a fullstack developer",
-    icon: React.createElement(FaReact),
-    date: "Nov. 2023 - Present",
+      "On the comeup platform I offer my services to individuals and businesses as a fullstack developer. (website creation and bug fixing)",
+    icon: React.createElement(CgWorkAlt),
+    date: "Nov. 2020 - Present",
     link: "https://comeup.com/@dev-pro",
   },
   {
@@ -78,15 +78,6 @@ export const experiencesData = [
     icon: React.createElement(FaReact),
     date: "Aug. 2021 - Nov. 2022",
     link: "https://digintu.ch",
-  },
-  {
-    title: "Full-Stack Developer",
-    company: "COMEUP",
-    description:
-      "On the comeup freelance platform I met the needs of many clients. (website creation and bug fixing)",
-    icon: React.createElement(CgWorkAlt),
-    date: "Nov. 2020 - Jul. 2021",
-    link: "https://comeup.com/@dev-pro",
   },
   {
     title: "Full-Stack Developer",
@@ -110,20 +101,12 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "Digintu Code",
+    title: "OneBill",
     description:
-      "As a fullstack developer, I fully developed the front-end part and I also took care of adding new features to the backend.",
-    tags: [
-      "React",
-      "Typescript",
-      "Ant Design",
-      "Redux",
-      "GraphQL",
-      "Apollo",
-      "Laravel",
-    ],
-    imageUrl: digintuCodeImg,
-    link: "https://digintu.codes",
+      "My participation in this project mainly consisted of carrying out end-to-end tests with cypress and fixing bugs in the frontend and backend.",
+    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
+    imageUrl: onebillImg,
+    link: "https://www.icabedo.ch/onebill",
   },
   {
     title: "Gloco Sarl",
@@ -134,12 +117,12 @@ export const projectsData = [
     link: "https://glocosarl.com",
   },
   {
-    title: "OneBill",
+    title: "Adaa Learning",
     description:
-      "My participation in this project mainly consisted of carrying out end-to-end tests with cypress and fixing bugs in the frontend and backend.",
-    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
-    imageUrl: onebillImg,
-    link: "https://www.icabedo.ch/onebill",
+      "As a full-stack developer and project manager, I participated in the development of frontend and backend features.",
+    tags: ["React", "Typescript", "Bootstrap", "CSS", "Git", "Laravel"],
+    imageUrl: adaaLearningImg,
+    link: "https://adaalearning.com/",
   },
   {
     title: "Legard Store",
@@ -197,12 +180,20 @@ export const projectsData = [
     link: "https://calculator.bleriotnoguia.com/",
   },
   {
-    title: "Adaa Learning",
+    title: "Digintu Code",
     description:
-      "As a full-stack developer and project manager, I participated in the development of frontend and backend features.",
-    tags: ["React", "Typescript", "Bootstrap", "CSS", "Git", "Laravel"],
-    imageUrl: adaaLearningImg,
-    link: "https://adaalearning.com/",
+      "As a fullstack developer, I fully developed the front-end part and I also took care of adding new features to the backend.",
+    tags: [
+      "React",
+      "Typescript",
+      "Ant Design",
+      "Redux",
+      "GraphQL",
+      "Apollo",
+      "Laravel",
+    ],
+    imageUrl: digintuCodeImg,
+    link: "https://digintu.codes",
   },
   {
     title: "Current portfolio",
