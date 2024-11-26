@@ -43,16 +43,7 @@ export const links = [
   },
 ] as const;
 
-type Experience = {
-  title: string;
-  company: string;
-  description: string;
-  icon: React.ReactElement;
-  date: string;
-  link?: string;
-};
-
-export const experiencesData: Experience[] = [
+export const experiencesData = [
   {
     title: "Fontend React.js Developer",
     company: "Ejara",
@@ -105,6 +96,7 @@ export const experiencesData: Experience[] = [
       "As a full-stack developer, I worked on <a href='https://github.com/bleriotnoguia/ubereats-clone' target='_blank' class='underline'>web application</a> for managing deliveries and customer orders.",
     icon: React.createElement(CgWorkAlt),
     date: "March 2019 - Oct. 2019",
+    link: "",
   },
 ] as const;
 
