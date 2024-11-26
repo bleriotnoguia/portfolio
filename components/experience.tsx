@@ -46,16 +46,20 @@ export default function Experience() {
               }}
             >
               <h3 className="font-semibold capitalize">{item.title}</h3>
-              <a href={item.link} className="underline" target="_blank">
-                <p className="font-normal !mt-0 flex items-center">
-                  {item.company}{" "}
-                  {item.link && (
-                    <BsArrowUpRightCircle className="ml-2 h-50 focus:scale-110 hover:scale-110" />
-                  )}
-                </p>
-              </a>
+              {item.link ? (
+                <a href={item.link} className="underline" target="_blank">
+                  <p className="font-normal !mt-0 flex items-center">
+                    {item.company}{" "}
+                    {item.link && (
+                      <BsArrowUpRightCircle className="ml-2 h-50 focus:scale-110 hover:scale-110" />
+                    )}
+                  </p>
+                </a>
+              ) : (
+                <p className="font-normal !mt-0">{item.company}</p>
+              )}
               <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-                {item.description}
+                <span dangerouslySetInnerHTML={{ __html: item.description }} />
               </p>
             </VerticalTimelineElement>
           </React.Fragment>
