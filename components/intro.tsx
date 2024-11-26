@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -8,7 +9,6 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { useEffect, useState } from "react";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
