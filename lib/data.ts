@@ -14,6 +14,7 @@ import cointrackerImg from "@/public/cointracker.png";
 import adaaLearningImg from "@/public/adaalearning.png";
 import porfoliov1Img from "@/public/portfolio1.png";
 import portfoliov2Img from "@/public/portfolio2.png";
+import ubereatsImg from "@/public/ubereats.png";
 
 export const links = [
   {
@@ -42,7 +43,16 @@ export const links = [
   },
 ] as const;
 
-export const experiencesData = [
+type Experience = {
+  title: string;
+  company: string;
+  description: string;
+  icon: React.ReactElement;
+  date: string;
+  link?: string;
+};
+
+export const experiencesData: Experience[] = [
   {
     title: "Fontend React.js Developer",
     company: "Ejara",
@@ -92,10 +102,9 @@ export const experiencesData = [
     title: "Full-Stack Developer",
     company: "ALC-Digital",
     description:
-      "As a full-stack developer, I worked on web application for managing deliveries and customer orders.",
+      "As a full-stack developer, I worked on <a href='https://github.com/bleriotnoguia/ubereats-clone' target='_blank' class='underline'>web application</a> for managing deliveries and customer orders.",
     icon: React.createElement(CgWorkAlt),
     date: "March 2019 - Oct. 2019",
-    link: "https://alc-digital.com",
   },
 ] as const;
 
@@ -210,6 +219,14 @@ export const projectsData = [
     tags: ["HTML", "CSS", "JavaScript", "Bootstrap", "Git"],
     imageUrl: porfoliov1Img,
     link: "https://v1.bleriotnoguia.com/",
+  },
+  {
+    title: "UberEats Clone",
+    description:
+      "When working at ALC-Digital (2019), I fully developed a web application for managing deliveries and customer orders.",
+    tags: ["Laravel", "Pusher", "JQuery", "Bootstrap", "MySQL", "JavaScript"],
+    imageUrl: ubereatsImg,
+    link: "https://github.com/bleriotnoguia/ubereats-clone",
   },
 ] as const;
 
