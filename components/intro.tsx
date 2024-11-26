@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
@@ -9,10 +8,23 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useEffect, useState } from "react";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+
+  const technologies = ["Next.js", "Native", "Ionic"];
+  const [currentTech, setCurrentTech] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTech((prevTech) => (prevTech + 1) % technologies.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [technologies.length]);
+
   return (
     <section
       ref={ref}
@@ -63,9 +75,25 @@ export default function Intro() {
       >
         <span className="font-bold">Hello, I'm Blériot Noguia.</span> I'm a{" "}
         <span className="font-bold">full-stack developer</span> with{" "}
-        <span className="font-bold">5 years</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="underline">React (Next.js)</span>.
+        <span className="font-bold">
+          {new Date().getFullYear() - 2019} years
+        </span>{" "}
+        of experience. I enjoy building{" "}
+        <span className="italic">sites & apps</span>. <br /> My focus is{" "}
+        <span className="underline">
+          React (
+          <motion.span
+            key={currentTech}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.5 }}
+          >
+            {technologies[currentTech]}
+          </motion.span>
+          )
+        </span>{" "}
+        and AdonisJS.
       </motion.h1>
 
       <motion.div
