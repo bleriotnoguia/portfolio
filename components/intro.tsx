@@ -79,7 +79,7 @@ export default function Intro() {
           {new Date().getFullYear() - 2019} years
         </span>{" "}
         of experience. I enjoy building{" "}
-        <span className="italic">sites & apps</span>. <br /> My focus is{" "}
+        <span className="italic">sites & apps</span>. My focus is{" "}
         <span className="underline">
           React (
           <motion.span
