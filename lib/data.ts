@@ -84,10 +84,10 @@ export const experiencesData = [
     title: "Full-Stack Developer",
     company: "ADAA SAS",
     description:
-      "I worked as a Full-Stack Developer. With my team we build an online learning platform with React.js and Laravel.",
+      "I worked as a Full-Stack Developer. With my team we build an <a href='https://adaalearning.com' target='_blank' class='underline'>online learning platform</a> with React.js and Laravel.",
     icon: React.createElement(CgWorkAlt),
     date: "Dec. 2019 - Oct. 2020",
-    link: "https://adaalearning.com",
+    link: "https://adaa.tech",
   },
   {
     title: "Full-Stack Developer",
