@@ -80,7 +80,7 @@ export default function Intro() {
         </span>{" "}
         of experience. I enjoy building{" "}
         <span className="italic">sites & apps</span>. My focus is
-        <div>
+        <div className="inline pl-1 md:block md:pl-0">
           React (
           <AnimatePresence mode="wait">
             <motion.div
