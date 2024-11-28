@@ -84,7 +84,7 @@ export default function Intro() {
           React (
           <AnimatePresence mode="wait">
             <motion.div
-              className="inline-block min-w-[7.2rem]"
+              className="inline-block md:min-w-[7.2rem] min-w-[5rem]"
               key={currentTech}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
