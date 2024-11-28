@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
@@ -14,13 +14,13 @@ export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
-  const technologies = ["Next.js", "Native", "Ionic"];
+  const technologies = ["Next.js", "Native"];
   const [currentTech, setCurrentTech] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTech((prevTech) => (prevTech + 1) % technologies.length);
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [technologies.length]);
@@ -79,21 +79,23 @@ export default function Intro() {
           {new Date().getFullYear() - 2019} years
         </span>{" "}
         of experience. I enjoy building{" "}
-        <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="underline">
+        <span className="italic">sites & apps</span>. My focus is
+        <div>
           React (
-          <motion.span
-            key={currentTech}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            transition={{ duration: 0.5 }}
-          >
-            {technologies[currentTech]}
-          </motion.span>
-          )
-        </span>{" "}
-        and AdonisJS.
+          <AnimatePresence mode="wait">
+            <motion.div
+              className="inline-block min-w-[7.2rem]"
+              key={currentTech}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+            >
+              {technologies[currentTech]}
+            </motion.div>
+          </AnimatePresence>
+          ) and AdonisJS.
+        </div>
       </motion.h1>
 
       <motion.div
