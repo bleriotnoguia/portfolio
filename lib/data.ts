@@ -15,6 +15,8 @@ import adaaLearningImg from "@/public/adaalearning.png";
 import porfoliov1Img from "@/public/portfolio1.png";
 import portfoliov2Img from "@/public/portfolio2.png";
 import ubereatsImg from "@/public/ubereats.png";
+import quoteImg from "@/public/quote.png";
+import protosenImg from "@/public/protosen.png";
 
 export const links = [
   {
@@ -219,6 +221,22 @@ export const projectsData = [
     tags: ["Laravel", "Pusher", "JQuery", "Bootstrap", "MySQL", "JavaScript"],
     imageUrl: ubereatsImg,
     link: "https://github.com/bleriotnoguia/ubereats-clone",
+  },
+  {
+    title: "Protosen",
+    description:
+      "Application for the Senegalese government. It allows to generate diplomatic cards based on the information of a holder.",
+    tags: ["React", "TypeScript", "Tailwind", "Github", "Next.js"],
+    imageUrl: protosenImg,
+    link: "https://protosen.gouv.sn/",
+  },
+  {
+    title: "Quote Creator",
+    description:
+      "Simple quote creator app built with Reactjs for learning purposes.",
+    tags: ["React", "TypeScript", "Tailwind", "Git", "CSS"],
+    imageUrl: quoteImg,
+    link: "https://quote.weledi.dev/",
   },
 ] as const;
 

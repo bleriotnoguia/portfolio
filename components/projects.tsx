@@ -25,7 +25,7 @@ export default function Projects() {
           href="/projects#top"
           className="bg-gray-800 text-white w-[12rem] mt-5 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
         >
-          View more (+09)
+          View more (+12)
         </Link>
       </div>
     </section>
