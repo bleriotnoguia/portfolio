@@ -21,6 +21,7 @@ import yassirPayImg from "@/public/yassir-pay.png";
 import troopayImg from "@/public/troopay.png";
 import activvaeImg from "@/public/activ-vae.png";
 import jscamImg from "@/public/jscam.png";
+import lockboxLocalImg from "@/public/lockbox-local.png";
 
 export const links = [
   {
@@ -145,6 +146,13 @@ export const projectsData = [
     tags: ["JavaScript", "AdonisJS", "Typescript", "React"],
     imageUrl: jscamImg,
     link: "https://www.javascript.cm",
+  },
+  {
+    title: "Lockbox Local",
+    description: "A desktop application version of Pluckeye Lockbox.",
+    tags: ["Tauri", "Typescript", "CSS", "HTML", "React", "Rust"],
+    imageUrl: lockboxLocalImg,
+    link: "https://github.com/bleriotnoguia/lockbox-local",
   },
   {
     title: "Gloco Sarl",
