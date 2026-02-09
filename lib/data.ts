@@ -272,6 +272,7 @@ export const projectsData = [
       "My participation in this project mainly consisted of carrying out end-to-end tests with cypress and fixing bugs in the frontend and backend.",
     tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
     imageUrl: onebillImg,
+    link: "",
   },
   {
     title: "Portfolio v1",

@@ -6,6 +6,7 @@ import Projects from "@/components/projects";
 import SectionDivider from "@/components/section-divider";
 import Skills from "@/components/skills";
 import Script from "next/script";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -32,8 +33,9 @@ export default function Home() {
           `}
       </Script>
       <noscript>
-        <img
+        <Image
           height="1"
+          alt="Facebook Pixel"
           width="1"
           style={{ display: "none" }}
           src="https://www.facebook.com/tr?id=1207669810373228&ev=PageView&noscript=1"
