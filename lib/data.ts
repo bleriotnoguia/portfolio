@@ -5,7 +5,6 @@ import biquizImg from "@/public/biquiz.png";
 import greatpayImg from "@/public/greatpay.png";
 import digintuCodeImg from "@/public/digintu-code.png";
 import glocosarlImg from "@/public/glocosarl.png";
-import legardImg from "@/public/legard-store.png";
 import gaAcademieImg from "@/public/ga-academie.png";
 import innovImg from "@/public/innov-and-co.png";
 import onebillImg from "@/public/onebill.png";
@@ -17,6 +16,11 @@ import portfoliov2Img from "@/public/portfolio2.png";
 import ubereatsImg from "@/public/ubereats.png";
 import quoteImg from "@/public/quote.png";
 import protosenImg from "@/public/protosen.png";
+import cvGeneratorImg from "@/public/cv-generator.png";
+import yassirPayImg from "@/public/yassir-pay.png";
+import troopayImg from "@/public/troopay.png";
+import activvaeImg from "@/public/activ-vae.png";
+import jscamImg from "@/public/jscam.png";
 
 export const links = [
   {
@@ -47,15 +51,6 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Fontend React.js Developer",
-    company: "Ejara",
-    description:
-      "I am involved in developing the frontend of the admin dashboard for the Ejara application. Converting Figma designs into functional code using React.js.",
-    icon: React.createElement(FaReact),
-    date: "Sept. 2024 - Present",
-    link: "https://ejara.io",
-  },
-  {
     title: "Full-Stack Developer",
     company: "COMEUP (Freelance)",
     description:
@@ -63,6 +58,15 @@ export const experiencesData = [
     icon: React.createElement(CgWorkAlt),
     date: "Nov. 2020 - Present",
     link: "https://comeup.com/@dev-pro",
+  },
+  {
+    title: "Fontend React.js Developer",
+    company: "Ejara",
+    description:
+      "I am involved in developing the frontend of the admin dashboard for the Ejara application. Converting Figma designs into functional code using React.js.",
+    icon: React.createElement(FaReact),
+    date: "Sept. 2024 - Dec. 2024",
+    link: "https://ejara.io",
   },
   {
     title: "Fontend React.js Developer",
@@ -104,12 +108,43 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "OneBill",
+    title: "Activ VAE",
     description:
-      "My participation in this project mainly consisted of carrying out end-to-end tests with cypress and fixing bugs in the frontend and backend.",
-    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
-    imageUrl: onebillImg,
-    link: "https://www.icabedo.ch/onebill",
+      "Complete platform for managing and supporting the steps of Validation of Acquired Experience (VAE)",
+    tags: [
+      "React Router",
+      "CSS",
+      "React",
+      "Typescript",
+      "Supabase",
+      "Tailwind",
+    ],
+    imageUrl: activvaeImg,
+    link: "https://activ-vae.vercel.app/",
+  },
+  {
+    title: "Troopay",
+    description:
+      "The first service capable of generating certified income statements from the automated analysis of bank flows.",
+    tags: ["Next.js", "CSS", "React", "Typescript"],
+    imageUrl: troopayImg,
+    link: "https://troopay.com",
+  },
+  {
+    title: "Protosen",
+    description:
+      "Application for the Senegalese government. It allows to generate diplomatic cards based on the information of a holder.",
+    tags: ["React", "TypeScript", "Tailwind", "Github", "Next.js"],
+    imageUrl: protosenImg,
+    link: "https://protosen.gouv.sn/",
+  },
+  {
+    title: "JavaScript Community",
+    description:
+      "I am the founder of the JavaScript community in Cameroun. I organize meetups and events to promote JavaScript and web development.",
+    tags: ["JavaScript", "AdonisJS", "Typescript", "React"],
+    imageUrl: jscamImg,
+    link: "https://www.javascript.cm",
   },
   {
     title: "Gloco Sarl",
@@ -126,14 +161,6 @@ export const projectsData = [
     tags: ["React", "Typescript", "Bootstrap", "CSS", "Git", "Laravel"],
     imageUrl: adaaLearningImg,
     link: "https://adaalearning.com/",
-  },
-  {
-    title: "Legard Store",
-    description:
-      "The website was built with WordPress. It allow visitors to get more information about the company and its products.",
-    tags: ["WordPress", "CSS"],
-    imageUrl: legardImg,
-    link: "https://legard.store",
   },
   {
     title: "GreatPay",
@@ -196,7 +223,7 @@ export const projectsData = [
       "Laravel",
     ],
     imageUrl: digintuCodeImg,
-    link: "https://digintu.codes",
+    link: "http://80.74.152.70/plesk-site-preview/sofie.codes/https/80.74.152.70/",
   },
   {
     title: "Current portfolio",
@@ -205,6 +232,38 @@ export const projectsData = [
     tags: ["React", "Typescript", "Next.js", "Tailwind", "Git"],
     imageUrl: portfoliov2Img,
     link: "",
+  },
+  {
+    title: "Quote Creator",
+    description:
+      "Simple quote creator app built with Reactjs for learning purposes.",
+    tags: ["React", "TypeScript", "Tailwind", "Git", "CSS"],
+    imageUrl: quoteImg,
+    link: "https://quote.javascript.cm/",
+  },
+  {
+    title: "CV Generator",
+    description:
+      "Simple CV generator app built with Reactjs. It allows you to create a CV by filling in the fields.",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind", "Git", "CSS"],
+    imageUrl: cvGeneratorImg,
+    link: "https://cv.javascript.cm/",
+  },
+  {
+    title: "Yassir Pay",
+    description:
+      "The company wanted a modern design that would allow visitors to obtain information about the company quickly.",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind", "Git", "CSS"],
+    imageUrl: yassirPayImg,
+    link: "https://yassirpay.ae/",
+    // link: "https://yassir-pay.vercel.app/",
+  },
+  {
+    title: "OneBill",
+    description:
+      "My participation in this project mainly consisted of carrying out end-to-end tests with cypress and fixing bugs in the frontend and backend.",
+    tags: ["React", "Typescript", "Ant Design", "Cypress", "Git", "Laravel"],
+    imageUrl: onebillImg,
   },
   {
     title: "Portfolio v1",
@@ -221,22 +280,6 @@ export const projectsData = [
     tags: ["Laravel", "Pusher", "JQuery", "Bootstrap", "MySQL", "JavaScript"],
     imageUrl: ubereatsImg,
     link: "https://github.com/bleriotnoguia/ubereats-clone",
-  },
-  {
-    title: "Protosen",
-    description:
-      "Application for the Senegalese government. It allows to generate diplomatic cards based on the information of a holder.",
-    tags: ["React", "TypeScript", "Tailwind", "Github", "Next.js"],
-    imageUrl: protosenImg,
-    link: "https://protosen.gouv.sn/",
-  },
-  {
-    title: "Quote Creator",
-    description:
-      "Simple quote creator app built with Reactjs for learning purposes.",
-    tags: ["React", "TypeScript", "Tailwind", "Git", "CSS"],
-    imageUrl: quoteImg,
-    link: "https://quote.weledi.dev/",
   },
 ] as const;
 
