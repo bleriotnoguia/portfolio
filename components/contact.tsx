@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const [formLoadedAt] = useState(() => Date.now());
 
   return (
     <motion.section
@@ -42,6 +43,7 @@ export default function Contact() {
       <form
         className="mt-10 flex flex-col dark:text-black"
         action={async (formData) => {
+          formData.append("formLoadedAt", formLoadedAt.toString());
           const { data, error } = await sendEmail(formData);
 
           if (error) {
@@ -52,6 +54,15 @@ export default function Contact() {
           toast.success("Email sent successfully!");
         }}
       >
+        {/* Honeypot - invisible aux humains, les bots le remplissent */}
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          className="absolute -left-[9999px] w-1 h-1 opacity-0 pointer-events-none"
+          aria-hidden="true"
+        />
         <input
           className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           name="senderEmail"
