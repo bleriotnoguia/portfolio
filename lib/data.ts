@@ -121,7 +121,7 @@ export const projectsData = [
       "Tailwind",
     ],
     imageUrl: activvaeImg,
-    link: "https://activ-vae.vercel.app/",
+    link: "https://app.activvae.com",
   },
   {
     title: "Troopay",
