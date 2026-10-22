@@ -1,93 +1,101 @@
 "use client";
 
-import { useRef } from "react";
-import { projectsData } from "@/lib/data";
+import React from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { BsArrowUpRightCircle } from "react-icons/bs";
+import clsx from "clsx";
+import { FiArrowUpRight } from "react-icons/fi";
+import type { Project as ProjectData } from "@/lib/data";
+import { useI18n } from "@/context/i18n-context";
+import { format } from "@/lib/i18n";
 
-type ProjectProps = (typeof projectsData)[number];
-type EvenProps = {
-  applyEvenTransformations: boolean;
+type ProjectProps = ProjectData & {
+  className?: string;
+  stageClassName?: string;
+  sizes?: string;
 };
 
-type MergedProps = ProjectProps & EvenProps;
-
 export default function Project({
-  applyEvenTransformations,
   title,
-  link,
+  category,
   description,
   tags,
   imageUrl,
-}: MergedProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  link,
+  className,
+  stageClassName = "aspect-[16/10]",
+  sizes = "(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw",
+}: ProjectProps) {
+  const { locale, t } = useI18n();
 
   return (
-    <motion.div
-      ref={ref}
-      style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+    <article
+      className={clsx(
+        "group relative flex flex-col rounded-[1.5rem] border border-line bg-surface p-2.5 transition-colors",
+        link && "hover:border-ink/25",
+        className
+      )}
     >
-      <section
-        className={`bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition ${
-          applyEvenTransformations && "sm:group-even:pl-8"
-        } dark:text-white dark:bg-white/10 dark:hover:bg-white/20`}
+      <div
+        className={clsx(
+          "relative overflow-hidden rounded-[1.1rem] bg-sunken",
+          stageClassName
+        )}
       >
-        <div
-          className={`pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full ${
-            applyEvenTransformations && "sm:group-even:ml-[18rem]"
-          }`}
-        >
-          <a href={link} className="underline" target="_blank">
-            <h3 className="text-2xl font-semibold flex items-center">
-              {title}{" "}
-              {link && (
-                <BsArrowUpRightCircle className="ml-2 h-50 focus:scale-110 hover:scale-110" />
-              )}
-            </h3>
-          </a>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
-        </div>
-
         <Image
           src={imageUrl}
-          alt="Project I worked on"
-          quality={95}
-          className={`absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-          transition 
-          group-hover:scale-[1.04]
-          group-hover:-translate-x-3
-          group-hover:translate-y-3
-          group-hover:-rotate-2
-  
-          ${
-            applyEvenTransformations &&
-            "group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2 group-even:right-[initial] group-even:-left-40"
-          }`}
+          alt={format(t.work.screenshotAlt, { title })}
+          fill
+          sizes={sizes}
+          quality={90}
+          placeholder="blur"
+          className="object-cover object-top transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:scale-[1.02] motion-reduce:transition-none"
         />
-      </section>
-    </motion.div>
+      </div>
+
+      <div className="flex flex-1 flex-col px-3 pb-3 pt-5 sm:px-4">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-sm text-muted">{category[locale]}</p>
+            <h3 className="stretch-semi mt-1 text-2xl font-bold tracking-tight">
+              {link ? (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="stretched-link"
+                >
+                  {title}
+                </a>
+              ) : (
+                title
+              )}
+            </h3>
+          </div>
+          {link && (
+            <span
+              aria-hidden="true"
+              className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-line transition-colors group-hover:border-signal group-hover:bg-signal group-hover:text-on-signal"
+            >
+              <FiArrowUpRight className="h-[1.1rem] w-[1.1rem]" />
+            </span>
+          )}
+        </div>
+
+        <p className="mt-3 max-w-[60ch] leading-relaxed text-muted">
+          {description[locale]}
+        </p>
+
+        <ul className="mt-auto flex flex-wrap gap-1.5 pt-5">
+          {tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-md border border-line px-2 py-0.5 text-[0.8125rem] text-ink/75"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
   );
 }

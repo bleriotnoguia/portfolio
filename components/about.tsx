@@ -1,44 +1,62 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { stackData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
+import { useI18n } from "@/context/i18n-context";
 
 export default function About() {
-  const { ref } = useSectionInView("About", 0.5);
-  return (
-    <motion.section
-      ref={ref}
-      className="mb-28 max-w-[45rem] text-center leading-8 sm:mb-40 scroll-mt-28"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
-      id="about"
-    >
-      <SectionHeading>About me</SectionHeading>
-      <p className="mb-3">
-        After graduating with a degree in{" "}
-        <span className="font-medium">Computer science</span>, I decided to
-        pursue my passion for programming. I took online courses and learned{" "}
-        <span className="font-medium">full-stack web development</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
-        <span className="font-medium">
-          React (Next.js), Node.js (AdonisJS), and MySQL
-        </span>
-        . I am also familiar with Laravel and No-Code ecosystem. I am always
-        looking to learn new technologies.
-      </p>
+  const { ref } = useSectionInView("About", 0.3);
+  const { t } = useI18n();
+  const [first, ...rest] = t.about.paragraphs;
 
-      <p>
-        <span className="italic">When I'm not coding</span>, I enjoy reading
-        books and watching videos about{" "}
-        <span className="font-medium">spirituality</span>. I also enjoy sharing
-        what I learn with others.
-      </p>
-    </motion.section>
+  return (
+    <section
+      ref={ref}
+      id="about"
+      className="mx-auto max-w-page scroll-mt-24 px-4 py-16 sm:px-6 sm:py-24"
+    >
+      <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <div className="lg:col-span-4">
+          <h2 className="h-section text-[clamp(2.25rem,1.4rem+3vw,3.75rem)]">
+            {t.about.title}
+          </h2>
+          <Image
+            src="/profile.png"
+            alt={t.about.portraitAlt}
+            width={400}
+            height={400}
+            className="mt-8 aspect-square w-full max-w-[18rem] rounded-[1.5rem] object-cover"
+          />
+        </div>
+
+        <div className="lg:col-span-8 lg:pt-2">
+          <div className="max-w-[60ch] space-y-5 text-lg leading-relaxed lg:text-xl lg:leading-relaxed">
+            <p>{first}</p>
+            {rest.map((paragraph) => (
+              <p key={paragraph} className="text-muted">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+
+          <h3 className="stretch-semi mt-14 text-xl font-bold tracking-tight">
+            {t.about.stackTitle}
+          </h3>
+          <dl className="mt-5 border-t border-line">
+            {stackData.map(({ group, items }) => (
+              <div
+                key={group}
+                className="grid gap-1 border-b border-line py-4 sm:grid-cols-[12rem_1fr] sm:gap-6"
+              >
+                <dt className="text-muted">{t.about.stackGroups[group]}</dt>
+                <dd>{items.join(", ")}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
   );
 }
