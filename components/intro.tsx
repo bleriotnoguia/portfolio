@@ -1,158 +1,151 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
 import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FiDownload } from "react-icons/fi";
+import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { clientsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { useI18n } from "@/context/i18n-context";
+
+const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+const socials = [
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/bleriotnoguia/",
+    icon: FaLinkedinIn,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/bleriotnoguia",
+    icon: FaGithub,
+  },
+  {
+    label: "WhatsApp",
+    href: "https://api.whatsapp.com/send?phone=237672077465",
+    icon: FaWhatsapp,
+  },
+];
+
+function HeadlineLines({
+  lines,
+  className,
+}: {
+  lines: string[];
+  className: string;
+}) {
+  return (
+    <span aria-hidden="true" className={className}>
+      {lines.map((line, index) => (
+        <span
+          key={line}
+          className="-mb-[0.1em] block overflow-hidden pb-[0.1em]"
+        >
+          <motion.span
+            className="block"
+            initial={{ y: "105%" }}
+            animate={{ y: "0%" }}
+            transition={{ delay: 0.1 + index * 0.08, duration: 0.8, ease }}
+          >
+            {line}
+          </motion.span>
+        </span>
+      ))}
+    </span>
+  );
+}
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-
-  const technologies = ["Next.js", "Native"];
-  const [currentTech, setCurrentTech] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTech((prevTech) => (prevTech + 1) % technologies.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [technologies.length]);
+  const { t } = useI18n();
+  // The same sentence broken for wide screens and for phones, so each line
+  // can be revealed on its own without the browser re-wrapping it.
+  const { headline } = t.hero;
 
   return (
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      className="mx-auto max-w-page scroll-mt-28 px-4 pb-8 pt-32 sm:px-6 sm:pt-40"
     >
-      <div className="flex items-center justify-center">
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "tween",
-              duration: 0.2,
-            }}
-          >
-            <Image
-              src="/profile.png"
-              alt="Blériot portrait"
-              width="192"
-              height="192"
-              quality="95"
-              priority={true}
-              className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
-            />
-          </motion.div>
-
-          <motion.span
-            className="absolute bottom-0 right-0 text-4xl"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
-            }}
-          >
-            👋
-          </motion.span>
-        </div>
-      </div>
-
-      <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
+      <motion.p
+        className="inline-flex items-center gap-2 rounded-full border border-line bg-surface py-1.5 pl-3 pr-4 text-sm"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
       >
-        <span className="font-bold">Hello, I'm Blériot Noguia.</span> I'm a{" "}
-        <span className="font-bold">full-stack developer</span> with{" "}
-        <span className="font-bold">
-          {new Date().getFullYear() - 2019} years
-        </span>{" "}
-        of experience. I enjoy building{" "}
-        <span className="italic">sites & apps</span>. My focus is
-        <div className="inline pl-1 md:block md:pl-0">
-          React (
-          <AnimatePresence mode="wait">
-            <motion.div
-              className="inline-block md:min-w-[7.2rem] min-w-[5rem]"
-              key={currentTech}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-            >
-              {technologies[currentTech]}
-            </motion.div>
-          </AnimatePresence>
-          ) and AdonisJS.
-        </div>
-      </motion.h1>
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60 motion-reduce:hidden" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+        </span>
+        {t.hero.available}
+      </motion.p>
+
+      <h1 className="h-display mt-8 text-[clamp(2.25rem,0.75rem+6.6vw,6.5rem)]">
+        <span className="sr-only">{headline.wide.join(" ")}</span>
+        <HeadlineLines lines={headline.narrow} className="sm:hidden" />
+        <HeadlineLines lines={headline.wide} className="hidden sm:block" />
+      </h1>
 
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
-        initial={{ opacity: 0, y: 100 }}
+        className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-12 lg:items-end"
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
+        transition={{ delay: 0.5, duration: 0.6, ease }}
       >
-        <Link
-          href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-          onClick={() => {
-            setActiveSection("Contact");
-            setTimeOfLastClick(Date.now());
-          }}
-        >
-          Contact me here{" "}
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-        </Link>
+        <p className="max-w-[52ch] text-lg leading-relaxed text-muted lg:col-span-6 lg:text-xl">
+          {t.hero.lead}
+        </p>
 
-        <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="/CV.pdf"
-          download
-        >
-          Download CV{" "}
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
-        </a>
-
-        <div className="flex gap-2">
-          <a
-            className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-            href="https://www.linkedin.com/in/bleriotnoguia/"
-            target="_blank"
+        <div className="flex flex-wrap items-center gap-3 lg:col-span-6 lg:justify-end">
+          <Link
+            href="#contact"
+            onClick={() => {
+              setActiveSection("Contact");
+              setTimeOfLastClick(Date.now());
+            }}
+            className="inline-flex h-12 items-center rounded-full bg-signal px-5 font-semibold text-on-signal transition hover:brightness-95 sm:px-6"
           >
-            <FaLinkedin size={22} />
-          </a>
-
+            {t.hero.cta}
+          </Link>
           <a
-            className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-            href="https://github.com/bleriotnoguia"
-            target="_blank"
+            href="/CV.pdf"
+            download
+            className="inline-flex h-12 items-center gap-2 rounded-full border border-line bg-surface px-5 font-semibold transition-colors hover:border-ink/30 sm:px-6"
           >
-            <FaGithub size={22} />
+            {t.hero.cv}
+            <FiDownload aria-hidden className="h-4 w-4" />
           </a>
-
-          <a
-            className="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-            href="https://api.whatsapp.com/send?phone=237672077465"
-            target="_blank"
-          >
-            <FaWhatsapp size={22} />
-          </a>
+          <ul className="flex gap-2">
+            {socials.map(({ label, href, icon: Icon }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="grid h-12 w-12 place-items-center rounded-full border border-line bg-surface text-ink/80 transition-colors hover:border-ink/30 hover:text-ink"
+                >
+                  <Icon className="h-[1.1rem] w-[1.1rem]" />
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </motion.div>
+
+      <div className="mt-16 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-baseline sm:gap-10 lg:mt-24">
+        <p className="shrink-0 text-sm text-muted">{t.hero.clients}</p>
+        <ul className="stretch-semi flex flex-wrap gap-x-8 gap-y-2 text-lg font-semibold tracking-tight text-ink/70">
+          {clientsData.map((client) => (
+            <li key={client}>{client}</li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

@@ -2,14 +2,156 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --paper: 242 243 245; /* #F2F3F5 page background */
+    --surface: 255 255 255; /* cards, nav, form */
+    --sunken: 231 233 238; /* stage behind screenshots */
+    --ink: 21 23 28; /* #15171C text */
+    --muted: 93 99 112; /* #5D6370 secondary text */
+    --line: 220 223 229; /* #DCDFE5 borders and rules */
+    --signal: 247 223 30; /* #F7DF1E JavaScript yellow, used as a fill only */
+    --on-signal: 21 23 28;
+    /* Syntax colors for code blocks in articles */
+    --code-keyword: #7a3e9d;
+    --code-string: #1f7a4d;
+    --code-function: #2d5bd0;
+    --code-number: #a04a07;
+    --code-type: #0e7490;
+    color-scheme: light;
+  }
+
+  .dark {
+    --paper: 15 20 32; /* #0F1420 */
+    --surface: 22 28 43; /* #161C2B */
+    --sunken: 30 37 55;
+    --ink: 236 238 243;
+    --muted: 154 163 181;
+    --line: 41 49 68;
+    --signal: 247 223 30;
+    --on-signal: 21 23 28;
+    --code-keyword: #d3a6f5;
+    --code-string: #86d6a8;
+    --code-function: #9db8ff;
+    --code-number: #f5b971;
+    --code-type: #7fd6e5;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background: rgb(var(--signal));
+    color: rgb(var(--on-signal));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--ink));
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Archivo's width axis carries the headline voice. */
+  .h-display {
+    font-stretch: 125%;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 0.95;
+  }
+
+  .h-section {
+    font-stretch: 118%;
+    font-weight: 750;
+    letter-spacing: -0.035em;
+    line-height: 1;
+  }
+
+  /* Makes a whole card clickable from a single link. */
+  .stretched-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: 1.5rem;
+  }
+
+  .stretched-link:focus-visible {
+    outline: none;
+  }
+
+  .stretched-link:focus-visible::after {
+    outline: 2px solid rgb(var(--ink));
+    outline-offset: 3px;
+  }
+}
+
+/* highlight.js tokens, rendered at build time in lib/blog.ts. Kept outside
+   @layer on purpose: Tailwind drops layered classes it can't find in source
+   files, and these only appear in the generated article HTML. */
+.hljs {
+  color: rgb(var(--ink));
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: rgb(var(--muted));
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-built_in {
+  color: var(--code-keyword);
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-template-tag,
+.hljs-addition {
+  color: var(--code-string);
+}
+
+.hljs-title,
+.hljs-section {
+  color: var(--code-function);
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-meta {
+  color: var(--code-number);
+}
+
+.hljs-type,
+.hljs-title.class_,
+.hljs-attr {
+  color: var(--code-type);
+}
+
+@layer utilities {
+  .stretch-semi {
+    font-stretch: 112%;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Smooth for in-page anchors. On page changes Next.js briefly switches to
+   instant scrolling because <html> carries data-scroll-behavior="smooth". */
 html {
-  --line-color: #e5e7eb;
+  scroll-behavior: smooth;
 }
 
-html.dark {
-  --line-color: rgba(255, 255, 255, 0.2);
-}
-
-.borderBlack {
-  @apply border border-black/10;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
 }

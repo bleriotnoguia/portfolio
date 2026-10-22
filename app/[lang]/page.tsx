@@ -3,20 +3,30 @@ import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import Intro from "@/components/intro";
 import Projects from "@/components/projects";
-import SectionDivider from "@/components/section-divider";
-import Skills from "@/components/skills";
+import Services from "@/components/services";
+import BlogSection from "@/components/blog-section";
 import Script from "next/script";
-import Image from "next/image";
+import { notFound } from "next/navigation";
+import { getPosts } from "@/lib/blog";
+import { isLocale } from "@/lib/i18n";
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}) {
+  const { lang } = await params;
+  if (!isLocale(lang)) notFound();
+  const posts = getPosts(lang).slice(0, 3);
+
   return (
-    <main className="flex flex-col items-center px-4">
+    <main>
       <Intro />
-      <SectionDivider />
-      <About />
       <Projects />
-      <Skills />
+      <Services />
       <Experience />
+      <About />
+      <BlogSection posts={posts} />
       <Contact />
       <Script id="facebook-pixel" strategy="afterInteractive">
         {`
@@ -33,9 +43,11 @@ export default function Home() {
           `}
       </Script>
       <noscript>
-        <Image
+        {/* A plain img on purpose: next/image would fail on this unconfigured host and break server rendering. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           height="1"
-          alt="Facebook Pixel"
+          alt=""
           width="1"
           style={{ display: "none" }}
           src="https://www.facebook.com/tr?id=1207669810373228&ev=PageView&noscript=1"

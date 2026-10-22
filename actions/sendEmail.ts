@@ -5,16 +5,24 @@ import { Resend } from "resend";
 import { validateString, getErrorMessage } from "@/lib/utils";
 import ContactFormEmail from "@/email/contact-form-email";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Temps minimum (ms) pour qu'un humain remplisse le formulaire - évite les bots
 const MIN_SUBMIT_TIME_MS = 3000;
 
-export const sendEmail = async (formData: FormData) => {
+// Codes rather than sentences: the client shows them in the visitor's language.
+export type SendEmailError =
+  | "invalid_submission"
+  | "too_fast"
+  | "invalid_email"
+  | "invalid_message"
+  | "send_failed";
+
+export const sendEmail = async (
+  formData: FormData
+): Promise<{ error?: SendEmailError; data?: unknown }> => {
   // Vérification anti-bot : honeypot (les bots remplissent les champs cachés)
   const honeypot = formData.get("website");
   if (honeypot && String(honeypot).trim().length > 0) {
-    return { error: "Invalid submission" };
+    return { error: "invalid_submission" };
   }
 
   // Vérification anti-bot : temps minimum (les bots soumettent instantanément)
@@ -22,7 +30,7 @@ export const sendEmail = async (formData: FormData) => {
   if (formLoadedAt) {
     const elapsed = Date.now() - parseInt(String(formLoadedAt), 10);
     if (elapsed < MIN_SUBMIT_TIME_MS) {
-      return { error: "Please take your time to fill the form" };
+      return { error: "too_fast" };
     }
   }
 
@@ -31,35 +39,35 @@ export const sendEmail = async (formData: FormData) => {
 
   // simple server-side validation
   if (!validateString(senderEmail, 500)) {
-    return {
-      error: "Invalid sender email",
-    };
+    return { error: "invalid_email" };
   }
   if (!validateString(message, 5000)) {
-    return {
-      error: "Invalid message",
-    };
+    return { error: "invalid_message" };
   }
 
-  let data;
   try {
-    data = await resend.emails.send({
+    // Created per request: Resend throws when the key is missing, which would
+    // otherwise break the build in environments without it.
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { data, error } = await resend.emails.send({
       from: "Contact Form <contact@bleriotnoguia.com>",
       to: process.env.RECIPIENT_EMAIL || "contact@bleriotnoguia.com",
       subject: "Message from contact form",
-      reply_to: senderEmail,
+      replyTo: senderEmail,
       react: React.createElement(ContactFormEmail, {
         message: message,
         senderEmail: senderEmail,
       }),
     });
-  } catch (error: unknown) {
-    return {
-      error: getErrorMessage(error),
-    };
-  }
 
-  return {
-    data,
-  };
+    if (error) {
+      console.error("Contact form email failed:", error.message);
+      return { error: "send_failed" };
+    }
+
+    return { data };
+  } catch (error: unknown) {
+    console.error("Contact form email failed:", getErrorMessage(error));
+    return { error: "send_failed" };
+  }
 };
