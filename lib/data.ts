@@ -142,8 +142,8 @@ export const experiencesData: Experience[] = [
     title: { en: "Full-Stack Developer", fr: "Développeur full-stack" },
     company: "ALC-Digital",
     description: {
-      en: "As a full-stack developer, I worked on a <a href='https://github.com/bleriotnoguia/ubereats-clone' target='_blank' rel='noopener noreferrer' class='underline'>web application</a> for managing deliveries and customer orders.",
-      fr: "En tant que développeur full-stack, j'ai travaillé sur une <a href='https://github.com/bleriotnoguia/ubereats-clone' target='_blank' rel='noopener noreferrer' class='underline'>application web</a> de gestion des livraisons et des commandes clients.",
+      en: "As a full-stack developer, I worked on a web application for managing deliveries and customer orders.",
+      fr: "En tant que développeur full-stack, j'ai travaillé sur une application web de gestion des livraisons et des commandes clients.",
     },
     start: "2019-03",
     end: "2019-10",
@@ -319,7 +319,7 @@ export const projectsData: Project[] = [
       "Laravel",
     ],
     imageUrl: digintuCodeImg,
-    link: "http://80.74.152.70/plesk-site-preview/sofie.codes/https/80.74.152.70/",
+    link: "",
   },
   {
     title: "Portfolio v2",
@@ -396,7 +396,7 @@ export const projectsData: Project[] = [
     },
     tags: ["Laravel", "Pusher", "JQuery", "Bootstrap", "MySQL", "JavaScript"],
     imageUrl: ubereatsImg,
-    link: "https://github.com/bleriotnoguia/ubereats-clone",
+    link: "",
   },
 ];
 
