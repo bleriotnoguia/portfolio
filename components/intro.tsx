@@ -70,7 +70,7 @@ export default function Intro() {
     <section
       ref={ref}
       id="home"
-      className="mx-auto max-w-page scroll-mt-28 px-4 pb-8 pt-32 sm:px-6 sm:pt-40"
+      className="mx-auto max-w-page scroll-mt-28 px-4 pb-8 pt-32 sm:px-6 sm:pt-36"
     >
       <motion.p
         className="inline-flex items-center gap-2 rounded-full border border-line bg-surface py-1.5 pl-3 pr-4 text-sm"
@@ -85,14 +85,14 @@ export default function Intro() {
         {t.hero.available}
       </motion.p>
 
-      <h1 className="h-display mt-8 text-[clamp(2.25rem,0.75rem+6.6vw,6.5rem)]">
+      <h1 className="h-display mt-8 text-[clamp(2.25rem,0.75rem+5.3vw,5.25rem)]">
         <span className="sr-only">{headline.wide.join(" ")}</span>
         <HeadlineLines lines={headline.narrow} className="sm:hidden" />
         <HeadlineLines lines={headline.wide} className="hidden sm:block" />
       </h1>
 
       <motion.div
-        className="mt-10 grid gap-8 lg:mt-14 lg:grid-cols-12 lg:items-end"
+        className="mt-10 grid gap-8 lg:mt-12 lg:grid-cols-12 lg:items-end"
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.6, ease }}
