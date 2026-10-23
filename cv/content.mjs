@@ -409,7 +409,7 @@ export const content = {
     experienceYears: (years) => `${years} years of experience`,
     location: "Douala, Cameroon",
     summary:
-      "Full-stack developer since 2019, I design and ship web and mobile products for startups, agencies and public institutions, from the first mockup to production. My core stack is React (Next.js, React Native), TypeScript, Node.js (AdonisJS) and Laravel. I also build AI into products: LLM features, agents that use real tools, RAG on company data and MCP servers. I'm used to working remotely with teams in Africa and Europe.",
+      "Full-stack developer since 2019, I design and ship web and mobile products for startups, agencies and public institutions, from idea to launch. My core stack is React (Next.js, React Native), TypeScript, Node.js (AdonisJS) and Laravel. I also build AI into products: LLM features, agents that use real tools, RAG on company data and MCP servers. I'm used to working remotely with teams in Africa and Europe.",
     sections: {
       experience: "Experience",
       projects: "Selected projects",
@@ -445,7 +445,7 @@ export const content = {
     experienceYears: (years) => `${years} ans d'expérience`,
     location: "Douala, Cameroun",
     summary:
-      "Développeur full-stack depuis 2019, je conçois et livre des produits web et mobiles pour des startups, des agences et des institutions publiques, de la première maquette à la mise en production. Ma stack principale : React (Next.js, React Native), TypeScript, Node.js (AdonisJS) et Laravel. J'intègre aussi l'IA dans les produits : fonctionnalités LLM, agents qui utilisent de vrais outils, RAG sur les données de l'entreprise et serveurs MCP. Je travaille régulièrement à distance avec des équipes d'Afrique et d'Europe.",
+      "Développeur full-stack depuis 2019, je conçois et livre des produits web et mobiles pour des startups, des agences et des institutions publiques, de l'idée à la mise en ligne. Ma stack principale : React (Next.js, React Native), TypeScript, Node.js (AdonisJS) et Laravel. J'intègre aussi l'IA dans les produits : fonctionnalités LLM, agents qui utilisent de vrais outils, RAG sur les données de l'entreprise et serveurs MCP. Je travaille régulièrement à distance avec des équipes d'Afrique et d'Europe.",
     sections: {
       experience: "Expérience",
       projects: "Projets choisis",

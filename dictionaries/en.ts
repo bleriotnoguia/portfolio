@@ -21,20 +21,8 @@ const en = {
   hero: {
     available: "Available for new projects",
     headline: {
-      wide: [
-        "Web, mobile",
-        "and AI products,",
-        "from first commit",
-        "to production.",
-      ],
-      narrow: [
-        "Web, mobile",
-        "and AI",
-        "products,",
-        "from first",
-        "commit to",
-        "production.",
-      ],
+      wide: ["Web, mobile", "and AI projects,", "from idea", "to launch."],
+      narrow: ["Web, mobile", "and AI", "projects,", "from idea", "to launch."],
     },
     lead: "I'm Blériot Noguia, a full-stack developer since 2019. I've shipped platforms for teams in France, Senegal, Switzerland and the UAE, and I now help companies build AI features and agents into their products.",
     cta: "Start a project",
@@ -131,7 +119,7 @@ const en = {
     moreTitle: "Keep reading",
   },
   contact: {
-    title: ["Have a product to build?", "Let's talk."],
+    title: ["Have a project in mind?", "Let's talk."],
     intro:
       "Tell me about your project with the form, or reach me directly by email or WhatsApp.",
     whatsapp: "Message on WhatsApp",
