@@ -113,8 +113,8 @@ export default function Intro() {
             {t.hero.cta}
           </Link>
           <a
-            href="/CV.pdf"
-            download
+            href={t.hero.cvFile}
+            download={t.hero.cvFileName}
             className="inline-flex h-12 items-center gap-2 rounded-full border border-line bg-surface px-5 font-semibold transition-colors hover:border-ink/30 sm:px-6"
           >
             {t.hero.cv}

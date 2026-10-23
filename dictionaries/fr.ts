@@ -40,6 +40,8 @@ const fr: Dictionary = {
     lead: "Je suis Blériot Noguia, développeur full-stack depuis 2019. J'ai livré des plateformes pour des équipes en France, au Sénégal, en Suisse et aux Émirats arabes unis, et j'aide aujourd'hui les entreprises à intégrer des fonctionnalités IA et des agents dans leurs produits.",
     cta: "Démarrer un projet",
     cv: "Télécharger le CV",
+    cvFile: "/CV-fr.pdf",
+    cvFileName: "Bleriot-Noguia-CV-FR.pdf",
     clients: "Équipes et clients",
   },
   work: {
@@ -101,7 +103,7 @@ const fr: Dictionary = {
       "J'ai étudié l'informatique, puis je me suis formé au développement web full-stack grâce à des cours en ligne. Ce que je préfère, c'est la résolution de problèmes : le moment où un bug tenace ou un besoin flou devient enfin clair.",
       "Ma stack principale : React (Next.js et React Native), Node.js avec AdonisJS, et MySQL. Je suis aussi à l'aise avec Laravel et les outils no-code.",
       "Une part croissante de mon travail porte sur l'IA : fonctionnalités LLM, agents qui appellent de vrais outils, et toute la plomberie qui les relie aux données d'une entreprise. J'utilise aussi des agents de code IA au quotidien, ce qui me permet de livrer plus vite sans baisser l'exigence de qualité.",
-      "J'ai fondé la communauté JavaScript du Cameroun, où j'organise des meetups et des événements. En dehors du code, je lis et regarde des vidéos sur la spiritualité, et j'aime partager ce que j'apprends.",
+      "Je suis membre de la communauté JavaScript du Cameroun. En dehors du code, je lis et regarde des vidéos sur la spiritualité, et j'aime partager ce que j'apprends.",
     ],
     stackTitle: "Stack",
     stackGroups: {

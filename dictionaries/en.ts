@@ -39,6 +39,8 @@ const en = {
     lead: "I'm Blériot Noguia, a full-stack developer since 2019. I've shipped platforms for teams in France, Senegal, Switzerland and the UAE, and I now help companies build AI features and agents into their products.",
     cta: "Start a project",
     cv: "Download CV",
+    cvFile: "/CV.pdf",
+    cvFileName: "Bleriot-Noguia-CV.pdf",
     clients: "Teams and clients",
   },
   work: {
@@ -100,7 +102,7 @@ const en = {
       "I studied computer science, then taught myself full-stack web development through online courses. What I enjoy most is the problem-solving: the moment a hard bug or a messy requirement finally makes sense.",
       "My core stack is React (Next.js and React Native), Node.js with AdonisJS, and MySQL. I'm also at home with Laravel and no-code tools.",
       "A growing part of my work is AI: LLM features, agents that call real tools, and the plumbing that connects them to a company's data. I also work with AI coding agents every day, which lets me ship faster without lowering the bar on quality.",
-      "I founded the JavaScript community in Cameroon, where I organise meetups and events. Outside of code, I read and watch videos about spirituality, and I like sharing what I learn.",
+      "I'm a member of the JavaScript community in Cameroon. Outside of code, I read and watch videos about spirituality, and I like sharing what I learn.",
     ],
     stackTitle: "Stack",
     stackGroups: {
