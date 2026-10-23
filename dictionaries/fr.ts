@@ -24,17 +24,17 @@ const fr: Dictionary = {
     available: "Disponible pour de nouveaux projets",
     headline: {
       wide: [
-        "Produits web,",
+        "Projets web,",
         "mobiles et IA,",
-        "du premier commit",
-        "à la production.",
+        "de l'idée à la",
+        "mise en ligne.",
       ],
       narrow: [
-        "Produits web,",
+        "Projets web,",
         "mobiles et IA,",
-        "du premier",
-        "commit à la",
-        "production.",
+        "de l'idée",
+        "à la mise",
+        "en ligne.",
       ],
     },
     lead: "Je suis Blériot Noguia, développeur full-stack depuis 2019. J'ai livré des plateformes pour des équipes en France, au Sénégal, en Suisse et aux Émirats arabes unis, et j'aide aujourd'hui les entreprises à intégrer des fonctionnalités IA et des agents dans leurs produits.",
@@ -132,7 +132,7 @@ const fr: Dictionary = {
     moreTitle: "À lire aussi",
   },
   contact: {
-    title: ["Un produit à construire ?", "Parlons-en."],
+    title: ["Un projet en tête\u00a0?", "Parlons-en."],
     intro:
       "Parlez-moi de votre projet via le formulaire, ou contactez-moi directement par e-mail ou WhatsApp.",
     whatsapp: "Écrire sur WhatsApp",
