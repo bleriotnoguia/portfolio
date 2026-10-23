@@ -57,6 +57,17 @@ export type StackGroup = "frontend" | "backend" | "ai" | "mobile" | "workflow";
 export const experiencesData: Experience[] = [
   {
     title: { en: "Full-Stack Developer", fr: "Développeur full-stack" },
+    company: "Activ'VAE",
+    description: {
+      en: "I develop Activ'VAE's platform for managing and supporting VAE journeys (Validation of Acquired Experience): administration back-office, data synchronisation with QUEOVAL and EDOF, audit logs and GDPR management.",
+      fr: "Je développe la plateforme d'Activ'VAE de gestion et d'accompagnement des parcours VAE (Validation des Acquis de l'Expérience) : back-office d'administration, synchronisation des données avec QUEOVAL et EDOF, journaux d'audit et gestion RGPD.",
+    },
+    start: "2025-11",
+    end: null,
+    link: "https://activvae.com",
+  },
+  {
+    title: { en: "Full-Stack Developer", fr: "Développeur full-stack" },
     company: "COMEUP (Freelance)",
     description: {
       en: "On the ComeUp platform, I offer my services to individuals and businesses as a full-stack developer: website creation and bug fixing.",
@@ -65,6 +76,17 @@ export const experiencesData: Experience[] = [
     start: "2020-11",
     end: null,
     link: "https://comeup.com/@dev-pro",
+  },
+  {
+    title: { en: "Front-end Developer", fr: "Développeur front-end" },
+    company: "Troopay (Freelance)",
+    description: {
+      en: "I turned Figma mockups into working React.js code and built front-end features for Troopay, a platform that generates certified income statements from bank flows.",
+      fr: "J'ai transformé des maquettes Figma en code React.js fonctionnel et développé des fonctionnalités front-end pour Troopay, une plateforme qui génère des bulletins de revenus certifiés à partir des flux bancaires.",
+    },
+    start: "2025-03",
+    end: "2025-10",
+    link: "https://troopay.com",
   },
   {
     title: {
@@ -77,7 +99,7 @@ export const experiencesData: Experience[] = [
       fr: "J'ai développé le frontend du tableau de bord d'administration de l'application Ejara, en transformant des maquettes Figma en code React.js fonctionnel.",
     },
     start: "2024-09",
-    end: "2024-12",
+    end: "2025-02",
     link: "https://ejara.io",
   },
   {
@@ -174,8 +196,8 @@ export const projectsData: Project[] = [
     title: "JavaScript Community",
     category: { en: "Community", fr: "Communauté" },
     description: {
-      en: "I founded the JavaScript community in Cameroon. I organise meetups and events to promote JavaScript and web development.",
-      fr: "J'ai fondé la communauté JavaScript du Cameroun. J'organise des meetups et des événements pour promouvoir JavaScript et le développement web.",
+      en: "Platform of the JavaScript community in Cameroon, which I'm a member of. The community promotes JavaScript and web development through meetups and events.",
+      fr: "Plateforme de la communauté JavaScript du Cameroun, dont je suis membre. La communauté promeut JavaScript et le développement web à travers des meetups et des événements.",
     },
     tags: ["JavaScript", "AdonisJS", "Typescript", "React"],
     imageUrl: jscamImg,
