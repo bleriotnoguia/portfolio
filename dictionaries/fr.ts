@@ -23,12 +23,7 @@ const fr: Dictionary = {
   hero: {
     available: "Disponible pour de nouveaux projets",
     headline: {
-      wide: [
-        "Projets web,",
-        "mobiles et IA,",
-        "de l'idée à la",
-        "mise en ligne.",
-      ],
+      wide: ["Projets web, mobiles", "et IA, de l'idée", "à la mise en ligne."],
       narrow: [
         "Projets web,",
         "mobiles et IA,",

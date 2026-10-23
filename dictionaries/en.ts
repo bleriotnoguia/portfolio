@@ -21,7 +21,7 @@ const en = {
   hero: {
     available: "Available for new projects",
     headline: {
-      wide: ["Web, mobile", "and AI projects,", "from idea", "to launch."],
+      wide: ["Web, mobile and", "AI projects, from", "idea to launch."],
       narrow: ["Web, mobile", "and AI", "projects,", "from idea", "to launch."],
     },
     lead: "I'm Blériot Noguia, a full-stack developer since 2019. I've shipped platforms for teams in France, Senegal, Switzerland and the UAE, and I now help companies build AI features and agents into their products.",
